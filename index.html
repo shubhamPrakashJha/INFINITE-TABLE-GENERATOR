@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TABLE GENERATOR</title>
+
+    <style>
+        div#table{
+            min-height: 35em;
+            background: linear-gradient(90deg,rgba(255,255,255,0.8)0%,rgba(255,255,255,0.5)25%,rgba(255,255,255,0.3)75%,rgba(255,255,255,0.0)100%);
+            box-shadow: 0 0 25px rgba(0,0,0,0.1),inset 0 0 1px rgba(255,255,255,0.6);
+            padding: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <article>
+
+        <section class="a">
+            <h2>INFINITE TABLE GENERATOR:</h2>  A Powerful table generator which can generate multiplication table for any no till infinity. <br><br><br>
+
+                <P> DISCLAIMER: A VERY LARGE NO. MIGHT SLOW DOWN YOUR PAGE</P>
+
+
+
+            <div id="table" style="height: 100%">
+                <p id="intro"></p>
+                <p>Enter The No. :<input type="number" id="num" name="tableNum" value="" autofocus></p>
+                <p>Enter The Range :<input type="number" id="rng" name="tableRng" value="" autofocus></p>
+                <p><input type="submit" id="submit" name="submit" value="Generate" onclick="return mulTable()"></p>
+
+                <div id="innerTable" >
+
+                </div>
+            </div>
+        </section>
+
+    </article>
+    <footer>shubhamprakashjha.com</footer>
+
+    <script>
+        function mulTable() {
+
+
+            var x = document.getElementById("num").value;
+            var y = document.getElementById("rng").value;
+
+
+            function mul(a, b) {
+                var z = a * b;
+                var msg = x + " * " + n + " = " + z;
+                var myElement = document.getElementById("innerTable");
+                var myNewElement = document.createElement("p");
+                var myText = document.createTextNode(msg);
+                document.getElementById("intro").innerHTML = "TABLE OF " + x + " :";
+                myNewElement.appendChild(myText);
+                myElement.appendChild(myNewElement);
+            }
+
+            document.getElementById("innerTable").innerHTML = "";
+            for (var n = 1; n <= y; n++) {
+                mul(x, n);
+            }
+        }
+
+
+
+
+
+    </script>
+</div>
+</body>
+
+</html>
